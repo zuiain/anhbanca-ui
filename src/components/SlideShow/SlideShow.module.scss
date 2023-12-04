@@ -1,0 +1,80 @@
+.slideshow {
+    margin: 0 auto;
+    overflow: hidden;
+    height: fit-content;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.slideshowSlider {
+    width: calc(var(--default-layout-width));
+    height: var(--slideshow-height);
+    white-space: nowrap;
+    transition: ease-in-out 1000ms;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.slide {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+/* Buttons */
+
+.left-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    color: var(--gray-color);
+    font-weight: 900;
+    cursor: pointer;
+    transition: all linear 0.1s;
+
+    &:hover {
+        color: var(--black-color);
+    }
+}
+
+.right-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    color: var(--gray-color);
+    cursor: pointer;
+    transition: all linear 0.1s;
+
+    &:hover {
+        color: var(--black-color);
+    }
+}
+
+.slideshowDots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.slideshowDot {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 15px 7px 0px;
+    background-color: var(--gray-color);
+}
+
+.slideshowDot.active {
+    background-color: var(--black-color);
+}
