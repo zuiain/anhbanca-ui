@@ -18,6 +18,10 @@ export const publicRoutes = [
                 path: '/',
                 element: <HomePage />,
             },
+            {
+                path: '/trang-chu',
+                element: <HomePage />,
+            },
         ],
     },
 ];

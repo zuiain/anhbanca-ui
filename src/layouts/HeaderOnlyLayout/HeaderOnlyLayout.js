@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './HeaderOnlyLayout.module.scss';
-import Header from '~/layouts/components/Header';
+import { Header } from '~/layouts/components';
 const cx = classNames.bind(styles);
 
 function DefaultLayout() {

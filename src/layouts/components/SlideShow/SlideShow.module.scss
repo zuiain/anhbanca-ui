@@ -8,7 +8,7 @@
 }
 
 .slideshowSlider {
-    width: calc(var(--default-layout-width));
+    width: 100%;
     height: var(--slideshow-height);
     white-space: nowrap;
     transition: ease-in-out 1000ms;
