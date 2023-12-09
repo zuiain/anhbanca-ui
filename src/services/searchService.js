@@ -1,4 +1,4 @@
-import httpRequest from '~/utils/';
+import { httpRequest } from '~/utils/';
 
 const searchProducts = async (q, type = 'less') => {
     try {

@@ -35,9 +35,12 @@ function SaleProducts({ imgSrc, Icon, title, percents = 20, delay, isNew = false
         // get sale products
         const fetchApi = async () => {
             const products = await getFNC();
-            if (products.length > 0) {
+            if (products === undefined) {
+                setProductsResult([]);
+            } else if (products.length > 0) {
                 setProductsResult(products);
             } else {
+                setProductsResult([]);
                 alert('No products found');
             }
         };

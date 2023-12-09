@@ -1,0 +1,136 @@
+.price-title {
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 5px 0px;
+    border-bottom: 1px solid var(--gray-color);
+
+    &::before {
+        content: ' ';
+        position: absolute;
+        bottom: -2px;
+        left: 0px;
+        height: 4px;
+        background-color: var(--blue-color);
+        border-radius: 50px;
+        animation: run 3s linear infinite;
+        transform-origin: center center;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 130px;
+        height: 4px;
+        background-color: var(--blue-color);
+        border-radius: 50px;
+        animation: run-reverse 3s linear infinite;
+        transform-origin: center center;
+    }
+}
+
+@keyframes run {
+    0% {
+        width: 5px;
+    }
+    20% {
+        width: 30px;
+    }
+    40% {
+        width: 55px;
+    }
+    60% {
+        width: 80px;
+    }
+    80% {
+        width: 105px;
+    }
+    100% {
+        width: 130px;
+    }
+}
+
+@keyframes run-reverse {
+    0% {
+        left: 15px;
+        width: 115px;
+    }
+    20% {
+        left: 40px;
+        width: 90px;
+    }
+    40% {
+        left: 65px;
+        width: 65px;
+    }
+    60% {
+        left: 90px;
+        width: 40px;
+    }
+    80% {
+        left: 115px;
+        width: 15px;
+    }
+    100% {
+        left: 130px;
+        width: 0px;
+    }
+}
+
+.price-content {
+    margin: 10px 0px;
+}
+.checkbox-wrapper {
+    margin: 10px 0px;
+}
+.checkbox-content {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-input {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 1.1em;
+    height: 1.1em;
+    border-radius: 2px;
+    margin-right: 10px;
+    border: 0.15em solid var(--blue-color);
+    outline: none;
+    cursor: pointer;
+}
+
+.checked {
+    background-color: #007a7e;
+    position: relative;
+}
+
+.checked::before {
+    content: '\2714';
+    font-size: 1.1em;
+    color: #fff;
+    position: absolute;
+    right: 1px;
+    top: -5px;
+}
+
+.checkbox-label {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.checkbox-wrapper input[type='checkbox']:disabled {
+    border-color: #c0c0c0;
+    background-color: #c0c0c0;
+}
+
+.checkbox-wrapper input[type='checkbox']:disabled + span {
+    color: #c0c0c0;
+}
+
+.checkbox-wrapper input[type='checkbox']:focus {
+    box-shadow: 0 0 5px #007a7e;
+}

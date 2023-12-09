@@ -1,4 +1,4 @@
-import httpRequest from '~/utils/';
+import { httpRequest } from '~/utils/';
 
 const createAccount = async (name, type = 'less') => {
     try {

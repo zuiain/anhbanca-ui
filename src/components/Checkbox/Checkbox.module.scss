@@ -1,0 +1,50 @@
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 0.15em;
+    margin-right: 0.5em;
+    border: 0.15em solid var(--blue-color);
+    outline: none;
+    cursor: pointer;
+}
+
+.checked {
+    background-color: #007a7e;
+    position: relative;
+}
+
+.checked::before {
+    content: '\2714';
+    font-size: 1.3em;
+    color: #fff;
+    position: absolute;
+    right: 1px;
+    top: -5px;
+}
+
+.label {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.wrapper input[type='checkbox']:disabled {
+    border-color: #c0c0c0;
+    background-color: #c0c0c0;
+}
+
+.wrapper input[type='checkbox']:disabled + span {
+    color: #c0c0c0;
+}
+
+.wrapper input[type='checkbox']:focus {
+    box-shadow: 0 0 5px #007a7e;
+}

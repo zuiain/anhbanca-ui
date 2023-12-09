@@ -3,7 +3,7 @@ import Tippy from '@tippyjs/react/headless';
 
 import PropTypes from 'prop-types';
 import styles from './Header.module.scss';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
     FilterIcon,
     OxiIcon,
@@ -83,7 +83,7 @@ function ListCategory({ className }) {
                 </div>
             )}
         >
-            <li className={cx({ [className]: className })}>
+            <li className={'prevent-select ' + cx({ [className]: className })}>
                 <p className={cx('title')}>Danh mục sản phẩm</p>
             </li>
         </Tippy>

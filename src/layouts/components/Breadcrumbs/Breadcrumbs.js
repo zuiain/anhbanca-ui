@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Breadcrumbs.module.scss';
 import { Link, useLocation } from 'react-router-dom';
 
+// eslint-disable-next-line
 const cx = classNames.bind(styles);
 
 function Breadcrumbs() {
@@ -72,7 +73,7 @@ function Breadcrumbs() {
                 <div className={cx('crumb')}>
                     <Link to="/">Trang chủ</Link>
                 </div>
-                <div className={cx('crumb')}>
+                <div className={'prevent-select ' + cx('crumb')}>
                     <Link to={currentLink}>{crumbName}</Link>
                 </div>
             </div>
