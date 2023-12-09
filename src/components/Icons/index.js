@@ -1,6 +1,5 @@
 //import Images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartFlatbed } from '@fortawesome/free-solid-svg-icons';
 import {
     faCircleXmark,
     faMagnifyingGlass,
@@ -264,6 +263,47 @@ export const RightButtonIcon = ({ className, width = '1.6rem', height = '1.6rem'
             viewBox="0 0 16 16"
         >
             <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+        </svg>
+    );
+};
+
+export const FireIcon = ({ className, width = '1.6rem', height = '1.6rem' }) => {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+            width={width}
+            height={height}
+            fill="currentColor"
+            viewBox="0 0 16 16"
+        >
+            <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15" />
+        </svg>
+    );
+};
+
+export const NewIcon = ({ className, width = '16px', height = '16px', title }) => {
+    return (
+        <Image
+            className={className}
+            width={width}
+            height={height}
+            src="//bizweb.dktcdn.net/100/344/954/themes/705100/assets/category_2_image.png?1672232161194"
+            alt={title}
+        />
+    );
+};
+export const EmailIcon = ({ className, width = '1.6rem', height = '1.6rem' }) => {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+            width={width}
+            height={height}
+            fill="currentColor"
+            viewBox="0 0 16 16"
+        >
+            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
         </svg>
     );
 };

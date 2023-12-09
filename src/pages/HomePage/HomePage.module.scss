@@ -1,6 +1,53 @@
 .banner {
     display: block;
-    width: var(--default-layout-width);
+    width: 100%;
     pointer-events: none;
     margin: 10px 0px;
+}
+
+.mid-banner {
+    display: flex;
+    justify-content: space-between;
+    height: 215px;
+}
+
+.mid-banner-left,
+.mid-banner-right {
+    width: 47.5%;
+    height: 100%;
+    position: relative;
+    will-change: transform;
+
+    &:before,
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        display: block;
+        background-color: dodgerblue;
+        transition: all 250ms ease-in-out;
+    }
+
+    &:before {
+        width: 2px;
+        height: 100%;
+        box-shadow: 570px 0 dodgerblue;
+    }
+
+    &:after {
+        height: 2px;
+        width: 100%;
+        box-shadow: 0 215px dodgerblue;
+    }
+
+    &:hover::before {
+        left: -10px;
+        box-shadow: 590px 0 dodgerblue;
+    }
+
+    &:hover::after {
+        top: -10px;
+        box-shadow: 0 235px dodgerblue;
+    }
 }

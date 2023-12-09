@@ -1,23 +1,9 @@
 const routes = {
-    home: '/home',
+    home: '/trang-chu',
 
-    _following: '/following',
-    _profile: '/profile',
-    _upload: '/upload',
-    _search: '/search',
-    _feedback: '/feedback',
-    _explore: '/explore',
-    _account: '/:nickname',
-    _live: '/live',
+    _category: '/loai-san-pham',
 
-    following: '/following/*',
-    profile: '/profile/*',
-    upload: '/upload/*',
-    search: '/search/*',
-    feedback: '/feedback/*',
-    explore: '/explore/*',
-    account: '/:nickname',
-    product: '/product/*',
+    category: '/loai-san-pham',
 };
 
 export default routes;

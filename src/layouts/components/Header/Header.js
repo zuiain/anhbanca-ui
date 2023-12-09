@@ -34,22 +34,24 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div className={'grid wide'}>
-                <div className={cx('mid-section')}>
-                    <Link to={'/trang-chu'}>
-                        <Image src={ListImages.logo} alt="Ảnh logo" className={cx('logo')} />
-                    </Link>
-                    <Search />
-                    <div className={cx('wishlist-cart')}>
-                        <div className={cx('wishlist-cart-item')}>
-                            <HeartIcon className={cx('icon')} width="2.8rem" height="2.8rem" />
-                            <span>Yêu thích</span>
-                            <span className={cx('badge')}>9</span>
-                        </div>
-                        <div className={cx('wishlist-cart-item')}>
-                            <CartIcon className={cx('icon')} width="2.8rem" height="2.8rem" />
-                            <span>Giỏ hàng</span>
-                            <span className={cx('badge')}>14</span>
+            <div className={cx('mid-section')}>
+                <div className={'grid wide'}>
+                    <div className={cx('inner-mid-section')}>
+                        <Link to={'/trang-chu'}>
+                            <Image src={ListImages.logo} alt="Ảnh logo" className={cx('logo')} />
+                        </Link>
+                        <Search />
+                        <div className={cx('wishlist-cart')}>
+                            <div className={cx('wishlist-cart-item')}>
+                                <HeartIcon className={cx('icon')} width="2.8rem" height="2.8rem" />
+                                <span>Yêu thích</span>
+                                <span className={cx('badge')}>9</span>
+                            </div>
+                            <div className={cx('wishlist-cart-item')}>
+                                <CartIcon className={cx('icon')} width="2.8rem" height="2.8rem" />
+                                <span>Giỏ hàng</span>
+                                <span className={cx('badge')}>14</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -65,12 +67,18 @@ function Header() {
                             </li>
                             <Category className={'navigation-item-category'} />
                             <li className={cx('navigation-item')}>
-                                <NavLink to={'/phu-kien'} className={(nav) => cx('title', { active: nav.isActive })}>
-                                    Phụ kiện bể cá
+                                <NavLink
+                                    to={'/loai-san-pham/phu-kien-thuy-sinh'}
+                                    className={(nav) => cx('title', { active: nav.isActive })}
+                                >
+                                    Phụ kiện thủy sinh
                                 </NavLink>
                             </li>
                             <li className={cx('navigation-item')}>
-                                <NavLink to={'/ca-tep-canh'} className={(nav) => cx('title', { active: nav.isActive })}>
+                                <NavLink
+                                    to={'/loai-san-pham/ca&tep-canh'}
+                                    className={(nav) => cx('title', { active: nav.isActive })}
+                                >
                                     Cá/ Tép cảnh
                                 </NavLink>
                             </li>

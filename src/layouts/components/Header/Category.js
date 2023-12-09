@@ -27,54 +27,54 @@ function ListCategory({ className }) {
                 <div className={cx('category-menu')} tabIndex="-1" {...attrs}>
                     <ul className={cx('category-menu-list')}>
                         <li className={cx('category-menu-item')}>
-                            <Link to={'/my-loc-may-bom-vat-lieu-loc'}>
+                            <Link to={'/loai-san-pham/may-loc-may-bom-vat-lieu-loc'}>
                                 <FilterIcon className={cx('category-menu-icon')} />
                                 Máy Lọc, Máy Bơm, Vật Liệu Lọc
                             </Link>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <Link to={'/my-sui-oxi-suoi'}>
+                            <Link to={'/loai-san-pham/may-sui-oxi-suoi'}>
                                 <OxiIcon className={cx('category-menu-icon')} />
                                 Máy Sủi Oxi, Sưởi
                             </Link>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <Link to={'/my-loc-vat-lieu-loc'}>
+                            <Link to={'/loai-san-pham/phan-nen-cot-nen'}>
                                 <AquaSoilIcon className={cx('category-menu-icon')} />
                                 Phân Nền, Cốt Nền Thủy Sinh
                             </Link>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <Link to={'/phu-kien-thuy-sinh'}>
+                            <Link to={'/loai-san-pham/phu-kien-thuy-sinh'}>
                                 <AquaGadgetIcon className={cx('category-menu-icon')} />
                                 Phụ Kiện Dành Cho Thủy Sinh
                             </Link>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <Link to={'/thuc-an-cho-ca-tep-canh'}>
+                            <Link to={'/loai-san-pham/thuc-an-cho-ca-tep-canh'}>
                                 <FoodForFishIcon className={cx('category-menu-icon')} />
                                 Thức Ăn Cho Cá/Tép
                             </Link>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <Link to={'/thuoc-chua-benh-cho-ca-tep-canh'}>
+                            <Link to={'/loai-san-pham/thuoc-danh-cho-thuy-sinh'}>
                                 <AquaMedicineIcon className={cx('category-menu-icon')} />
                                 Thuốc Dành Cho Thủy Sinh
                             </Link>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <Link to={'/cay-thuy-sinh'}>
+                            <Link to={'/loai-san-pham/cay-thuy-sinh'}>
                                 <AquaPlant className={cx('category-menu-icon')} />
                                 Cây Thủy Sinh
                             </Link>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <Link to={'/ca-canh'}>
+                            <Link to={'/loai-san-pham/ca-canh'}>
                                 <FishIcon className={cx('category-menu-icon')} /> Cá Cảnh
                             </Link>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <Link to={'/tep-canh'}>
+                            <Link to={'/loai-san-pham/tep-canh'}>
                                 <ShrimpIcon className={cx('category-menu-icon')} />
                                 Tép Cảnh
                             </Link>
@@ -84,9 +84,7 @@ function ListCategory({ className }) {
             )}
         >
             <li className={cx({ [className]: className })}>
-                <NavLink to={'/danh-muc'} className={(nav) => cx('title', { active: nav.isActive })}>
-                    Danh mục sản phẩm
-                </NavLink>
+                <p className={cx('title')}>Danh mục sản phẩm</p>
             </li>
         </Tippy>
     );

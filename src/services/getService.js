@@ -12,7 +12,18 @@ const getIMGBanner = async () => {
 
 const getSaleProducts = async () => {
     try {
-        const res = await httpRequest.get('product?sort=name*sale-desc&limit=6');
+        const res = await httpRequest.get('product?sort=name*sale-desc');
+        return res.data;
+    } catch (err) {
+        console.error(err);
+        return undefined;
+    }
+};
+
+const getNewestProducts = async () => {
+    try {
+        // day moi la cai dung nhung do chua co img nen danh ;)) const res = await httpRequest.get('product?sort=createdAt-desc');
+        const res = await httpRequest.get('product?sort=createdAt-asc');
         return res.data;
     } catch (err) {
         console.error(err);
@@ -24,4 +35,5 @@ const getSaleProducts = async () => {
 export const getService = {
     getIMGBanner,
     getSaleProducts,
+    getNewestProducts,
 };

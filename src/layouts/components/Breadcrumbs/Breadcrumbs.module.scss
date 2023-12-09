@@ -1,0 +1,28 @@
+.breadcrumbs {
+    background-color: rgba(var(--gray-color-rgb), 0.05);
+    padding: 10px;
+}
+
+.crumb {
+    display: inline-block;
+    margin-right: 10px;
+
+    &::after {
+        content: '/' !important;
+        margin-left: 10px;
+        font-weight: 800;
+    }
+
+    &:first-child:hover > a {
+        color: var(--red-color);
+    }
+
+    &:last-child {
+        font-weight: 600;
+        pointer-events: none;
+    }
+
+    &:last-child::after {
+        display: none;
+    }
+}

@@ -1,9 +1,12 @@
+//import { createBrowserRouter, RouterProvider } from 'react-router-dom';//const router = createBrowserRouter(publicRoutes);
 import { useRoutes } from 'react-router-dom';
+import '~/assets/css/Grid.css';
 import { publicRoutes } from '~/routes';
-import './Grid.css';
 
 function App() {
-    return <div className="App">{useRoutes(publicRoutes)}</div>;
+    //return <RouterProvider router={router} />;
+    const _publicRoutes = useRoutes(publicRoutes);
+    return <div>{_publicRoutes}</div>;
 }
 
 export default App;

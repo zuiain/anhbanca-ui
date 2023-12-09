@@ -1,18 +1,19 @@
 import { Outlet } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './HeaderOnlyLayout.module.scss';
-import { Header } from '~/layouts/components';
+import { Header, Footer } from '~/layouts/components';
 const cx = classNames.bind(styles);
 
-function DefaultLayout() {
+function HeaderOnlyLayout() {
     return (
         <div className={cx('wrapper')}>
             <Header />
             <div className={cx('container')}>
                 <Outlet />
             </div>
+            <Footer />
         </div>
     );
 }
 
-export default DefaultLayout;
+export default HeaderOnlyLayout;

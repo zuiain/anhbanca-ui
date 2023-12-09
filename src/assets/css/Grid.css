@@ -292,11 +292,6 @@
         margin-right: -5px;
     }
 
-    .row.no-gutter {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-
     .col {
         padding-left: 12px;
         padding-right: 12px;
@@ -440,9 +435,15 @@
     .grid.wide {
         width: 984px;
     }
+
     .wide .row {
         margin-left: -12px;
         margin-right: -12px;
+    }
+
+    .wide .row.no-gutters {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
     .wide .row.sm-gutter {
@@ -479,7 +480,8 @@
     .wide .l-12 {
         display: block;
     }
-    .wide .l-11 {
+
+    .wide .l-1 {
         flex: 0 0 8.33333%;
         max-width: 8.33333%;
     }

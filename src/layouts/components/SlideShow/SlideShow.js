@@ -43,9 +43,7 @@ function SlideShow({ delay = 2500 }) {
             <div className={cx('slideshowSlider')} style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
                 {imgBanner.map(({ imgSrc }, index) => {
                     return (
-                        <div className={cx('slide')} key={index} style={{ backgroundImage: `url(${imgSrc})` }}>
-                            <span className={cx('right-button')}></span>
-                        </div>
+                        <div className={cx('slide')} key={index} style={{ backgroundImage: `url(${imgSrc})` }}></div>
                     );
                 })}
             </div>
@@ -53,7 +51,6 @@ function SlideShow({ delay = 2500 }) {
             <div
                 className={cx('left-button')}
                 onClick={() => {
-                    console.log(index);
                     setIndex((prevIndex) => (prevIndex === 0 ? imgBanner.length - 1 : prevIndex - 1));
                 }}
             >
@@ -63,7 +60,6 @@ function SlideShow({ delay = 2500 }) {
             <div
                 className={cx('right-button')}
                 onClick={() => {
-                    console.log(index);
                     setIndex((preIndex) => (preIndex === imgBanner.length - 1 ? 0 : preIndex + 1));
                 }}
             >
