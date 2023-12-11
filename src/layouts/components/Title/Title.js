@@ -1,10 +1,13 @@
 import classNames from 'classnames/bind';
 import styles from './Title.module.scss';
 import { useParams } from 'react-router-dom';
+
 const cx = classNames.bind(styles);
+
 function Title() {
     const { category } = useParams();
-    let title = category;
+    let title = '';
+
     switch (category) {
         case 'may-loc-may-bom-vat-lieu-loc':
             title = 'Máy Lọc, Máy Bơm, Vật Liệu Lọc';
@@ -37,7 +40,7 @@ function Title() {
             title = 'Các Loại Cá Và Tép Cảnh';
             break;
         default:
-            title = '';
+            title = 'Tiêu Đề';
             break;
     }
 

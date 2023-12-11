@@ -13,14 +13,8 @@ export const publicRoutes = [
                     {
                         path: config.routes.category + '/:category',
                         element: <ProductPage />,
-                        handle: {
-                            crumb: (data) => <span>{data}</span>,
-                        },
                     },
                 ],
-                handle: {
-                    crumb: () => <span>Loại Sản phẩm</span>,
-                },
             },
         ],
     },

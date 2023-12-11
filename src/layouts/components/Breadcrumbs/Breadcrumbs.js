@@ -1,35 +1,13 @@
 import classNames from 'classnames/bind';
 import styles from './Breadcrumbs.module.scss';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-// eslint-disable-next-line
 const cx = classNames.bind(styles);
 
 function Breadcrumbs() {
-    // let matches = useMatches();
-    // let crumbs = matches
-    //     .filter((match) => Boolean(match.handle?.crumb))
-    //     .map((match) => match.handle.crumb(match.params.category));
-
-    const location = useLocation();
-
-    let currentLink = '';
+    const { category } = useParams();
+    const lastCrumb = category;
     let crumbName;
-
-    const crumbs = location.pathname
-        .split('/')
-        .filter((crumb) => crumb !== '')
-        .map((crumb, index) => {
-            currentLink = currentLink + `/${crumb}`;
-            return crumb;
-            // return (
-            //     <div className={cx('crumb')} key={index}>
-            //         <Link to={currentLink}>{crumb}</Link>
-            //     </div>
-            // );
-        });
-
-    const lastCrumb = crumbs[crumbs.length - 1];
 
     switch (lastCrumb) {
         case 'may-loc-may-bom-vat-lieu-loc':
@@ -63,7 +41,7 @@ function Breadcrumbs() {
             crumbName = 'Các Loại Cá Và Tép Cảnh';
             break;
         default:
-            crumbName = '';
+            crumbName = 'Tiêu Đề';
             break;
     }
 
@@ -74,7 +52,7 @@ function Breadcrumbs() {
                     <Link to="/">Trang chủ</Link>
                 </div>
                 <div className={'prevent-select ' + cx('crumb')}>
-                    <Link to={currentLink}>{crumbName}</Link>
+                    <Link to={`/loai-san-pham/${lastCrumb}`}>{crumbName}</Link>
                 </div>
             </div>
         </div>

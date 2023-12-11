@@ -6,12 +6,15 @@ import { Breadcrumbs } from '~/layouts/components';
 const cx = classNames.bind(styles);
 
 function DefaultLayout() {
+    // const formRef = useRef();
+    // const { category } = useParams();
     return (
         <div>
             <Header />
             <div className={cx('wrapper')}>
                 <Breadcrumbs />
                 <Title />
+                {/* <form action={'/loai-san-pham/' + category} method="get" ref={formRef}> */}
                 <div className={cx('container')}>
                     <div className="grid wide">
                         <div className="row">
@@ -26,6 +29,7 @@ function DefaultLayout() {
                         </div>
                     </div>
                 </div>
+                {/* </form> */}
             </div>
             <Footer />
         </div>

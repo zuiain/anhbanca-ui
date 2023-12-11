@@ -1,11 +1,11 @@
 import routes from './routes';
 import * as menu from './menu';
-import searchPrice from './searchPrice';
+import filter from './filter';
 
 const config = {
     routes,
     menu,
-    searchPrice,
+    filter,
 };
 
 export default config;

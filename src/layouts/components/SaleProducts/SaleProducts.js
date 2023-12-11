@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
 import styles from './SaleProducts.module.scss';
+import { formatMoney } from '~/utils';
 import { LeftButtonIcon, RightButtonIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 const cx = classNames.bind(styles);
@@ -12,11 +13,7 @@ function SaleProducts({ imgSrc, Icon, title, percents = 20, delay, isNew = false
     const [productsResult, setProductsResult] = useState([]);
     const [index, setIndex] = useState(0);
     const timeoutRef = useRef(null);
-
-    const VND = new Intl.NumberFormat('vi-VN', {
-        style: 'currency',
-        currency: 'VND',
-    });
+    const [toVND] = formatMoney;
 
     const resetTimeout = () => {
         if (timeoutRef.current) {
@@ -89,10 +86,10 @@ function SaleProducts({ imgSrc, Icon, title, percents = 20, delay, isNew = false
                                         <p className={cx('sale-item-name')}>{product.name}</p>
                                         <p className={cx('sale-item-price')}>
                                             <span className={cx('sale-item-new-price')}>
-                                                {VND.format(product.price)}
+                                                {toVND.format(product.price)}
                                             </span>
                                             <span className={cx('sale-item-last-price')}>
-                                                {VND.format(product.price)}
+                                                {toVND.format(product.price)}
                                             </span>
                                         </p>
                                     </div>
