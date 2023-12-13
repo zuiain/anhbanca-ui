@@ -9,8 +9,8 @@ const cx = classNames.bind(styles);
 function Sidebar() {
     return (
         <div className={cx('wrapper')}>
-            <Filter data={config.filter.searchPrice} searchName={'gia'} title="giá thành" />
-            <Filter data={config.filter.supplier} searchName={'ncc'} title="nhà cung cấp" />
+            <Filter data={config.filter.searchPrice} searchName={'price'} title="giá thành" />
+            <Filter data={config.filter.supplier} searchName={'vendor'} title="nhà cung cấp" />
             <HotProducts title="sản phẩm bán chạy" />
         </div>
     );

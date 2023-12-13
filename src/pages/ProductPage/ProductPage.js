@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 function ProductPage() {
     return (
         <div className={cx('wrapper')}>
-            <SortBar />
+            <SortBar sortName={'sort'} />
         </div>
     );
 }

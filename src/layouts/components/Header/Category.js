@@ -3,7 +3,6 @@ import Tippy from '@tippyjs/react/headless';
 
 import PropTypes from 'prop-types';
 import styles from './Header.module.scss';
-import { a } from 'react-router-dom';
 import {
     FilterIcon,
     OxiIcon,

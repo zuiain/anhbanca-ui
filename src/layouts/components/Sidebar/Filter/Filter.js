@@ -1,5 +1,5 @@
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Filter.module.scss';
@@ -8,92 +8,70 @@ import styles from './Filter.module.scss';
 const cx = classNames.bind(styles);
 
 function Filter({ title, data, searchName, formRef }) {
-    const navigate = useNavigate();
-    const pathUrl = useLocation();
     const [isChecked, setIsChecked] = useState([]);
-    const [searchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
     const searchedArray = [...searchParams];
 
     //console.log(Object.fromEntries([...searchParams]));
 
+    // get list checkbox from url
     useEffect(() => {
         // set lại list checked box dựa theo url mỗi khi url bị refresh
         let resArr = [];
+
         if (data.length > 0 && searchedArray.length > 0) {
             searchedArray.map(([searchedName, searchedValue]) => {
                 if (searchedName === searchName) {
-                    searchedValue.split('OR').map((value) => {
-                        const index = data.findIndex((item) => item.value === value);
-                        if (index !== -1) {
-                            resArr.push(index);
-                        }
-                        return 1;
-                    });
+                    const index = data.findIndex((item) => item.value === searchedValue);
+                    if (index > -1) {
+                        resArr.push(index);
+                    }
+                    return 1;
                 }
                 return 1;
             });
         }
+
         resArr.length > 0 && setIsChecked(resArr);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    // lưu query trc khi bị render lại
-    let _queryStr = useRef();
-    _queryStr.current = '';
-
+    // navigate form list checkbox
     useEffect(() => {
-        // từ list checkbox sẽ navigate
-        let queryStr;
+        let params = [];
+        let searchedParams = [...searchedArray];
+        let checkChangeSearchName = false;
 
-        const createQuery = (firstLetter) => {
-            let str = '';
+        const createParams = () => {
             if (isChecked.length > 0) {
-                isChecked.sort().map((item, index) => {
-                    if (index === 0) {
-                        str = str + `${firstLetter}${searchName}=${data[item].value}`;
-                    } else {
-                        str = str + `OR${data[item].value}`;
-                    }
+                isChecked.sort().map((item) => {
+                    params.push([searchName, data[item].value]);
                     return 1;
                 });
             }
-            return str;
         };
 
-        const createOldQuery = (searchedValue, searchedName) => {
-            let str = '';
-            searchedValue.split('OR').map((value, index) => {
-                if (index === 0) {
-                    str = str + `?${searchedName}=${value}`;
-                } else {
-                    str = str + `OR${value}`;
-                }
-                return 1;
-            });
-            return str;
-        };
+        createParams();
 
-        console.log(searchedArray);
-
-        if (searchedArray.length > 0) {
-            searchedArray.map(([searchedName, searchedValue]) => {
+        for (let i = 0; i < searchedParams.length; i++) {
+            const [searchedName] = searchedParams[i];
+            if (JSON.stringify(params).includes(JSON.stringify(searchedParams[i]))) {
+                searchedParams.splice(i, 1);
+                i = i - 1;
+            } else {
                 if (searchedName === searchName) {
-                    if (!_queryStr.current) {
-                        console.log('Chay code khi search name k thay đổi');
-                        queryStr = createQuery('?');
-                    }
-                } else {
-                    console.log('Chay code khi search name thay đổi');
-                    _queryStr.current = createOldQuery(searchedValue, searchedName);
-                    queryStr = _queryStr.current + createQuery('&');
+                    searchedParams.splice(i, 1);
+                    i = i - 1;
                 }
-                return 1;
-            });
-        } else {
-            queryStr = queryStr = createQuery('?');
+            }
+            if (searchedName !== searchName) {
+                checkChangeSearchName = true;
+            }
         }
 
-        navigate(pathUrl.pathname + queryStr);
+        checkChangeSearchName && (params = [...searchedParams, ...params]);
+
+        setSearchParams(params);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isChecked]);
 
