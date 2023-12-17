@@ -1,6 +1,6 @@
 import routes from './routes';
 import * as menu from './menu';
-import filter from './filter';
+import * as filter from './filter';
 
 const config = {
     routes,

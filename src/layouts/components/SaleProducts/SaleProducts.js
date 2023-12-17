@@ -60,6 +60,7 @@ function SaleProducts({ imgSrc, Icon, title, percents = 20, delay, isNew = false
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [index]);
+    console.log(productsResult);
 
     return (
         <div className={cx('sale')}>
@@ -77,7 +78,7 @@ function SaleProducts({ imgSrc, Icon, title, percents = 20, delay, isNew = false
                     {productsResult.length > 0 &&
                         productsResult.map((product) => (
                             <div className="col l-2-4 m-4" key={product._id}>
-                                <Link to={`/san-pham/${product.slug}`} className={cx('sale-item')}>
+                                <Link to={`/${product.slug}`} className={cx('sale-item')}>
                                     <div
                                         className={cx('sale-item-img')}
                                         style={{ backgroundImage: `url(${product.imgUrl})` }}
@@ -111,11 +112,13 @@ function SaleProducts({ imgSrc, Icon, title, percents = 20, delay, isNew = false
 
 SaleProducts.propTypes = {
     imgSrc: PropTypes.string,
+    percents: PropTypes.number,
     delay: PropTypes.number,
     limit: PropTypes.number,
     Icon: PropTypes.node.isRequired,
     title: PropTypes.string.isRequired,
     getFNC: PropTypes.func.isRequired,
+    isNew: PropTypes.bool,
 };
 
 export default SaleProducts;

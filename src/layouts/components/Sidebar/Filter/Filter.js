@@ -3,75 +3,41 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Filter.module.scss';
-//import { useLocalStorage } from '~/utils';
+import { useQueryParam, ArrayParam, withDefault } from 'use-query-params';
 
 const cx = classNames.bind(styles);
+const MyFiltersParam = withDefault(ArrayParam, []);
 
-function Filter({ title, data, searchName, formRef }) {
+function Filter({ title, data, searchName }) {
     const [isChecked, setIsChecked] = useState([]);
-    const [searchParams, setSearchParams] = useSearchParams();
-    const searchedArray = [...searchParams];
-
-    //console.log(Object.fromEntries([...searchParams]));
+    const [filter, setFilter] = useQueryParam(searchName, MyFiltersParam);
 
     // get list checkbox from url
     useEffect(() => {
-        // set lại list checked box dựa theo url mỗi khi url bị refresh
         let resArr = [];
-
-        if (data.length > 0 && searchedArray.length > 0) {
-            searchedArray.map(([searchedName, searchedValue]) => {
-                if (searchedName === searchName) {
-                    const index = data.findIndex((item) => item.value === searchedValue);
-                    if (index > -1) {
-                        resArr.push(index);
-                    }
-                    return 1;
+        if (data.length > 0 && filter.length > 0) {
+            filter.map((searchedValue) => {
+                const index = data.findIndex((item) => item.value === searchedValue);
+                if (index > -1) {
+                    resArr.push(index);
                 }
                 return 1;
             });
         }
-
-        resArr.length > 0 && setIsChecked(resArr);
+        resArr.length > 0 && setIsChecked((pre) => [...pre, ...resArr]);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // navigate form list checkbox
     useEffect(() => {
-        let params = [];
-        let searchedParams = [...searchedArray];
-        let checkChangeSearchName = false;
-
-        const createParams = () => {
-            if (isChecked.length > 0) {
-                isChecked.sort().map((item) => {
-                    params.push([searchName, data[item].value]);
-                    return 1;
-                });
-            }
-        };
-
-        createParams();
-
-        for (let i = 0; i < searchedParams.length; i++) {
-            const [searchedName] = searchedParams[i];
-            if (JSON.stringify(params).includes(JSON.stringify(searchedParams[i]))) {
-                searchedParams.splice(i, 1);
-                i = i - 1;
-            } else {
-                if (searchedName === searchName) {
-                    searchedParams.splice(i, 1);
-                    i = i - 1;
-                }
-            }
-            if (searchedName !== searchName) {
-                checkChangeSearchName = true;
-            }
+        const resArr = [];
+        if (isChecked.length > 0) {
+            isChecked.sort().map((item) => {
+                resArr.push(data[item].value);
+                return 1;
+            });
         }
-
-        checkChangeSearchName && (params = [...searchedParams, ...params]);
-
-        setSearchParams(params);
+        setFilter(resArr);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isChecked]);
 
@@ -88,7 +54,7 @@ function Filter({ title, data, searchName, formRef }) {
 
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('title')}>{title}</div>
+            <div className="title-line-run">{title}</div>
             <div className={cx('content')}>
                 {data &&
                     data.length > 0 &&

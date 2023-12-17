@@ -1,9 +1,13 @@
 const routes = {
     home: '/trang-chu',
 
-    _category: '/loai-san-pham',
-
     category: '/loai-san-pham',
+
+    cart: '/gio-hang',
+
+    login: 'dang-nhap',
+
+    register: 'dang-ky',
 };
 
 export default routes;

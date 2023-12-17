@@ -1,0 +1,168 @@
+.wrapper {
+    padding-top: 30px;
+}
+
+.info-img {
+    width: 95%;
+    padding-top: 95%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.info-name {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.line {
+    content: '';
+    height: 1px;
+    width: 90%;
+    border-bottom: 1px solid var(--gray-color);
+}
+
+.info-item {
+    margin: 10px 0px;
+}
+
+.info-title {
+    font-weight: 700;
+}
+
+.info-content {
+    margin-left: 10px;
+}
+
+.availability {
+    color: red;
+}
+
+.info-price {
+    font-size: 3rem;
+    color: var(--red-color);
+    font-weight: 700;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+.info-quantity {
+    margin-left: 20px;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+.info-quantity-input {
+    text-align: center;
+    width: 64%;
+    border: 1px solid var(--gray-color);
+    padding: 5px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background-color: var(--white-color);
+}
+
+.info-quantity-btn {
+    width: 32px;
+    height: 32px;
+    font-weight: 900;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.info-btn {
+    width: 90%;
+}
+
+.description {
+    border: 1px solid var(--gray-color);
+    margin: 20px 0px 0px;
+}
+
+.description-title {
+    background-color: rgba(var(--gray-color-rgb), 0.08);
+    padding: 15px;
+    color: red;
+    font-weight: 700;
+}
+
+.description-content {
+    padding: 10px 15px 30px;
+    text-align: justify;
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    ul li {
+        margin-left: 20px;
+        font-size: 1.4rem;
+    }
+
+    ol li {
+        margin-left: 15px;
+        font-size: 1.4rem;
+    }
+
+    img {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+// policy
+.introduce {
+    margin-bottom: 15px;
+}
+
+.introduce-content {
+    font-size: 1.4rem;
+    text-align: justify;
+    padding: 10px 0px;
+}
+
+.policy-content {
+    margin-top: 10px;
+    padding: 0 15px;
+    background-color: rgba(var(--gray-color-rgb), 0.03);
+}
+
+.policy-item {
+    padding: 20px 0px;
+    display: flex;
+}
+
+.policy-img {
+    width: 30px;
+    height: 30px;
+    margin: 15px 10px 0px 0px;
+}
+
+.policy-detail {
+    flex: 1 1;
+    text-align: justify;
+}
+
+.policy-detail-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.policy-detail-content {
+    margin-top: 5px;
+    color: #9397a5;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.phone-number {
+    color: var(--red-color);
+}

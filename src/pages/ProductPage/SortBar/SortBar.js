@@ -1,46 +1,47 @@
 /* eslint-disable array-callback-return */
-import { useSearchParams } from 'react-router-dom';
 import classNames from 'classnames/bind';
+import { useQueryParam, StringParam } from 'use-query-params';
 import styles from './SortBar.module.scss';
 import config from '~/config';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
 function SortBar({ sortName }) {
-    const [searchParams, setSearchParams] = useSearchParams();
-    const searchedArray = [...searchParams];
-    const [query, setQuery] = useState([]);
+    const [sort, setSort] = useQueryParam(sortName);
+    const [value, setValue] = useState();
 
     useEffect(() => {
-        let finalQuery;
-        let searchedParams = [...searchedArray];
-
-        if (searchedParams.length > 0) {
-            for (let i = 0; i < searchedParams.length; i++) {
-                const [searchedName] = searchedParams[i];
-                if (searchedName === sortName) {
-                    searchedParams.splice(i, 1);
-                    i = i - 1;
-                }
-            }
+        const index = config.filter.sort.findIndex((item) => item.value === sort);
+        if (index > -1) {
+            setValue(sort);
         }
-
-        query.length > 0 ? (finalQuery = [...searchedParams, query]) : (finalQuery = []);
-
-        setSearchParams(finalQuery);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [query]);
+    }, []);
 
     const handleOnChange = (e) => {
-        setQuery([e.target.name, e.target.value]);
+        if (e.target.value === 'default') {
+            setSort(undefined);
+            setValue('default');
+        } else {
+            setValue(e.target.value);
+            setSort(e.target.value);
+        }
     };
 
     return (
         <div className={cx('wrapper')}>
             <div className={cx('content-left')}>
                 <label className={cx('content-title')}>sắp xếp</label>
-                <select className={cx('content-select')} name={sortName} onChange={(e) => handleOnChange(e)}>
+                <select
+                    className={cx('content-select')}
+                    value={value}
+                    defaultValue={'default'}
+                    name={sortName}
+                    onChange={(e) => handleOnChange(e)}
+                >
+                    <option value={'default'}>Mặc định</option>
                     {config.filter.sort.map((item, index) => (
                         <option key={index} value={item.value}>
                             {item.title}
@@ -51,5 +52,9 @@ function SortBar({ sortName }) {
         </div>
     );
 }
+
+SortBar.propTypes = {
+    sortName: PropTypes.string.isRequired,
+};
 
 export default SortBar;

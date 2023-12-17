@@ -1,19 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { BrowserRouter } from 'react-router-dom';
+import { QueryParamProvider } from 'use-query-params';
+import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6';
+import queryString from 'query-string';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from '~/components/GlobalStyles';
-import { BrowserRouter } from 'react-router-dom';
+import '~/assets/css/Grid.css';
+import '~/assets/css/GlobalClasses.css';
+import ScrollToTop from './components/ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     // <React.StrictMode>
     <BrowserRouter>
-        <GlobalStyles>
-            <App />
-        </GlobalStyles>
+        <QueryParamProvider
+            adapter={ReactRouter6Adapter}
+            options={{
+                searchStringToObject: queryString.parse,
+                objectToSearchString: queryString.stringify,
+            }}
+        >
+            <GlobalStyles>
+                <ScrollToTop />
+                <App />
+            </GlobalStyles>{' '}
+        </QueryParamProvider>
     </BrowserRouter>,
     // </React.StrictMode>,
 );

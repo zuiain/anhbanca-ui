@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins, faEarthAsia, faGear, faKeyboard, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
 
-const defaultMenu = [
+export const defaultMenu = [
     {
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
@@ -132,7 +132,7 @@ const defaultMenu = [
     },
 ];
 
-const userMenu = [
+export const userMenu = [
     {
         icon: <FontAwesomeIcon icon={faUser} />,
         title: 'View Profile',
@@ -156,5 +156,3 @@ const userMenu = [
         separate: true,
     },
 ];
-
-export { defaultMenu, userMenu };

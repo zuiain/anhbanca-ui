@@ -5,6 +5,7 @@ import { getService } from '~/services';
 import Image from '~/components/Image';
 import { formatMoney } from '~/utils';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
@@ -51,5 +52,9 @@ function HotProducts({ title }) {
         </div>
     );
 }
+
+HotProducts.propTypes = {
+    title: PropTypes.string.isRequired,
+};
 
 export default HotProducts;

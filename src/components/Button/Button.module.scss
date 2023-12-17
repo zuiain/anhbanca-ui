@@ -35,12 +35,12 @@
 }
 
 .primary {
-    background-color: var(--primary-color);
+    background-color: var(--blue-color);
     border-color: transparent;
     color: var(--white-color);
 
     &:hover {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.09), rgba(0, 0, 0, 0.09)), var(--blue-color);
     }
 }
 
