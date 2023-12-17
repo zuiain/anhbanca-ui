@@ -1,13 +1,15 @@
 import classNames from 'classnames/bind';
 import styles from './Breadcrumbs.module.scss';
 import { Link, useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // import { useEffect, useState } from 'react';
 // import { getService } from '~/services';
 
 const cx = classNames.bind(styles);
 
-function Breadcrumbs({ productCategory = false, productName = false }) {
+function Breadcrumbs({ productCategory, productName, title }) {
     const { category } = useParams();
+
     //const [detailCategoryResult, setDetailCategoryResult] = useState();
 
     // useEffect(() => {
@@ -22,6 +24,8 @@ function Breadcrumbs({ productCategory = false, productName = false }) {
     //     fetchApi();
     // }, []);
 
+    const crumbQuery = title ? title : category;
+
     return (
         <div className={cx('breadcrumbs')}>
             <div className="grid wide">
@@ -34,7 +38,7 @@ function Breadcrumbs({ productCategory = false, productName = false }) {
                     </div>
                 ) : (
                     <div className={'prevent-select ' + cx('crumb')}>
-                        <Link to={`/loai-san-pham/${category}`}>{category}</Link>
+                        <Link>{crumbQuery}</Link>
                     </div>
                 )}
                 {productName && <div className={'prevent-select ' + cx('crumb')}>{productName}</div>}
@@ -42,5 +46,11 @@ function Breadcrumbs({ productCategory = false, productName = false }) {
         </div>
     );
 }
+
+Breadcrumbs.propTypes = {
+    productCategory: PropTypes.string,
+    productName: PropTypes.string,
+    title: PropTypes.string,
+};
 
 export default Breadcrumbs;

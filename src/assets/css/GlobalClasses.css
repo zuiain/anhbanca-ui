@@ -15,9 +15,9 @@
     &::before {
         content: ' ';
         position: absolute;
-        bottom: -2px;
+        bottom: -1px;
         left: 0px;
-        height: 4px;
+        height: 3px;
         background-color: var(--blue-color);
         border-radius: 50px;
         animation: run 3s linear infinite;
@@ -27,9 +27,9 @@
     &::after {
         content: '';
         position: absolute;
-        bottom: -2px;
+        bottom: -1px;
         left: 130px;
-        height: 4px;
+        height: 3px;
         background-color: var(--blue-color);
         border-radius: 50px;
         animation: run-reverse 3s linear infinite;
