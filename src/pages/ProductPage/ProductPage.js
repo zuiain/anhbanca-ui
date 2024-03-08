@@ -37,10 +37,13 @@ function ProductPage() {
                     {productsResult.map((product) => (
                         <div className="col l-3 m-4 c-6" key={product._id}>
                             <Link to={`/${product.slug}`} className={cx('product-item')}>
-                                <div
-                                    className={cx('product-img')}
-                                    style={{ backgroundImage: `url(${product.imgUrl})` }}
-                                ></div>
+                                <div className={cx('product-img-wrapper')}>
+                                    <div
+                                        className={cx('product-img')}
+                                        style={{ backgroundImage: `url(${product.imgUrl})` }}
+                                    ></div>
+                                </div>
+
                                 <div className={cx('product-content')}>
                                     <p className={cx('product-name')}>{product.name}</p>
                                     <p className={cx('product-price')}>
@@ -48,6 +51,7 @@ function ProductPage() {
                                         <span className={cx('product-new-price')}> {toVND.format(product.price)}</span>
                                     </p>
                                 </div>
+
                                 <div className={cx('product-sale-off')}>
                                     <span>-10%</span>
                                 </div>

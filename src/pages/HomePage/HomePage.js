@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './HomePage.module.scss';
 import Image from '~/components/Image';
 import SlideShow from '~/layouts/components/SlideShow';
-import ListImages from '~/assets/images';
+import ListImages from '~/assets/img';
 import { SaleProducts } from '~/layouts/components';
 import { getService } from '~/services';
 import { FireIcon, NewIcon, FilterIcon, OxiIcon, FoodForFishIcon } from '~/components/Icons';

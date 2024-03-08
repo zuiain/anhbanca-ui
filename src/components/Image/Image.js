@@ -1,8 +1,7 @@
 import { forwardRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-
-import Images from '~/assets/images';
+import Images from '~/assets/img';
 import styles from './Image.module.scss';
 
 const cx = classNames.bind(styles);
@@ -15,8 +14,8 @@ const Image = forwardRef(({ src, alt, className, fallback = Images.noImage, ...p
             ref={ref}
             src={errImgSrc || src}
             alt={alt}
-            {...props}
             onError={() => setErrImgSrc(fallback)}
+            {...props}
         />
     );
 });

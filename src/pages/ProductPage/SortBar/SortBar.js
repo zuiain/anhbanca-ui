@@ -1,6 +1,6 @@
 /* eslint-disable array-callback-return */
 import classNames from 'classnames/bind';
-import { useQueryParam, StringParam } from 'use-query-params';
+import { useQueryParam } from 'use-query-params';
 import styles from './SortBar.module.scss';
 import config from '~/config';
 import { useEffect, useState } from 'react';

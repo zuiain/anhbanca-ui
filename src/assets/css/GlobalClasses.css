@@ -6,7 +6,7 @@
 
 .title-line-run {
     position: relative;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
     padding: 5px 0px;
     border-bottom: 1px solid var(--gray-color);
@@ -41,6 +41,16 @@
     font-weight: 700;
     font-size: 1.5rem;
     color: var(--text-color);
+}
+
+.red-color {
+    color: var(--red-color);
+}
+
+.center-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @keyframes run {

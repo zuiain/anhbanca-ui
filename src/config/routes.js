@@ -5,9 +5,13 @@ const routes = {
 
     cart: '/gio-hang',
 
+    wishlist: '/yeu-thich',
+
     login: 'dang-nhap',
 
     register: 'dang-ky',
+
+    admin: 'admin',
 };
 
 export default routes;

@@ -1,0 +1,118 @@
+.wishlist-container {
+    margin: 20px 0px;
+}
+
+.wishlist-wrapper {
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+}
+
+.wishlist-title-wrapper {
+    width: 500px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+
+    .wishlist-title {
+        font-size: 3rem;
+        margin-left: 10px;
+        text-transform: capitalize;
+    }
+}
+
+.wishlist-title-content {
+    padding: 5px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    user-select: none;
+}
+
+.wishlist-content {
+    .product-detail {
+        margin: 5px 0px;
+        padding: 3px 0px;
+        border-top: 2px solid #f0f0f0;
+        font-weight: 600;
+    }
+
+    .product-img-wrapper {
+        display: block;
+        width: 70%;
+        overflow: hidden;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .product-img {
+        padding-top: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        border-radius: 3px;
+
+        transform: scale3d(0.95, 0.95, 0.95);
+        //transition: transform 1s linear;
+
+        &:hover,
+        &:focus {
+            transform: scale3d(1, 1, 1);
+            transition: transform 0.5s linear;
+        }
+    }
+
+    .product-name-wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -12px;
+        padding-right: 10px;
+    }
+
+    .product-name {
+        text-align: justify;
+        &:hover {
+            color: var(--red-color);
+        }
+    }
+
+    .product-status-on {
+        user-select: none;
+        color: var(--green-color);
+    }
+
+    .product-status-off {
+        user-select: none;
+        color: var(--red-color);
+    }
+
+    .product-name {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .product-old-price {
+        color: var(--gray-color);
+        font-size: 1.4rem;
+        text-decoration: line-through;
+        margin-right: 10px;
+    }
+
+    .product-price {
+        user-select: none;
+        color: var(--red-color);
+    }
+
+    .wishlist-add-btn {
+        margin-right: 20px;
+    }
+
+    .wishlist-trash-icon {
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+}

@@ -3,12 +3,9 @@
     margin-top: -3px;
 }
 
-.search-popper {
-    max-height: fit-content;
-}
-
 .search-result-box {
-    height: 405px;
+    height: auto;
+    max-height: 405px;
     overflow-y: auto;
 }
 
@@ -41,7 +38,7 @@
         font-size: 1.6rem;
         background-color: transparent;
         padding-right: 40px;
-        caret-color: var(--primary-color);
+        caret-color: var(--red-color);
 
         &:not(:placeholder-shown) ~ .search-btn {
             cursor: pointer;

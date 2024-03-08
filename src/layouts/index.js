@@ -1,3 +1,5 @@
-export { default as DefaultLayout } from './DefaultLayout';
+export { default as ProductLayout } from './ProductLayout';
 
-export { default as HeaderOnlyLayout } from './HeaderOnlyLayout';
+export { default as MainLayout } from './MainLayout';
+
+export { default as AdminLayout } from './AdminLayout';

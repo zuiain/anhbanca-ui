@@ -6,7 +6,11 @@ import {
     faSpinner,
     faArrowRightToBracket,
     faUserPlus,
+    faCircleExclamation,
+    faTrash,
 } from '@fortawesome/free-solid-svg-icons';
+
+import ListImages from '~/assets/img';
 import Image from '~/components/Image';
 
 export const LoginIcon = ({ className, width = '1.6rem', height = '1.6rem' }) => {
@@ -311,6 +315,7 @@ export const NewIcon = ({ className, width = '16px', height = '16px', title }) =
         />
     );
 };
+
 export const EmailIcon = ({ className, width = '1.6rem', height = '1.6rem' }) => {
     return (
         <svg
@@ -324,4 +329,24 @@ export const EmailIcon = ({ className, width = '1.6rem', height = '1.6rem' }) =>
             <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
         </svg>
     );
+};
+
+export const ErrorIcon = ({ className, width = '1.6rem', height = '1.6rem' }) => {
+    return (
+        <>
+            <FontAwesomeIcon icon={faCircleExclamation} className={className} width={width} height={height} />
+        </>
+    );
+};
+
+export const TrashIcon = ({ className, width = '1.6rem', height = '1.6rem' }) => {
+    return (
+        <>
+            <FontAwesomeIcon icon={faTrash} className={className} width={width} height={height} />
+        </>
+    );
+};
+
+export const BasketIcon = ({ className, width = '16px', height = '16px' }) => {
+    return <Image className={className} width={width} height={height} src={ListImages.basket} alt="category-icons" />;
 };

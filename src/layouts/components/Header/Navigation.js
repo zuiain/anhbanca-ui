@@ -1,8 +1,7 @@
 import classNames from 'classnames/bind';
-import { NavLink } from 'react-router-dom';
-
-import Category from './Category';
 import styles from './Header.module.scss';
+import { NavLink } from 'react-router-dom';
+import Category from './Category';
 import { HomeIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);

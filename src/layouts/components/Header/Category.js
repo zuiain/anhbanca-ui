@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
-
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './Header.module.scss';
 import {
@@ -26,57 +26,57 @@ function ListCategory({ className }) {
                 <div className={cx('category-menu')} tabIndex="-1" {...attrs}>
                     <ul className={cx('category-menu-list')}>
                         <li className={cx('category-menu-item')}>
-                            <a href={'/loai-san-pham/may-loc-may-bom-vat-lieu-loc'}>
+                            <NavLink to={'/loai-san-pham/may-loc-may-bom-vat-lieu-loc'}>
                                 <FilterIcon className={cx('category-menu-icon')} />
                                 Máy Lọc, Máy Bơm, Vật Liệu Lọc
-                            </a>
+                            </NavLink>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <a href={'/loai-san-pham/may-sui-oxi-suoi'}>
+                            <NavLink to={'/loai-san-pham/may-sui-oxi-suoi'}>
                                 <OxiIcon className={cx('category-menu-icon')} />
                                 Máy Sủi Oxi, Sưởi
-                            </a>
+                            </NavLink>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <a href={'/loai-san-pham/phan-nen-cot-nen'}>
+                            <NavLink to={'/loai-san-pham/phan-nen-cot-nen'}>
                                 <AquaSoilIcon className={cx('category-menu-icon')} />
                                 Phân Nền, Cốt Nền Thủy Sinh
-                            </a>
+                            </NavLink>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <a href={'/loai-san-pham/phu-kien-thuy-sinh'}>
+                            <NavLink to={'/loai-san-pham/phu-kien-thuy-sinh'}>
                                 <AquaGadgetIcon className={cx('category-menu-icon')} />
-                                Phụ Kiện Dành Cho Thủy Sinh
-                            </a>
+                                Phụ Kiện Thủy Sinh
+                            </NavLink>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <a href={'/loai-san-pham/thuc-an-cho-ca-tep-canh'}>
+                            <NavLink to={'/loai-san-pham/thuc-an-cho-ca-tep-canh'}>
                                 <FoodForFishIcon className={cx('category-menu-icon')} />
                                 Thức Ăn Cho Cá/Tép
-                            </a>
+                            </NavLink>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <a href={'/loai-san-pham/thuoc-danh-cho-thuy-sinh'}>
+                            <NavLink to={'/loai-san-pham/thuoc-danh-cho-thuy-sinh'}>
                                 <AquaMedicineIcon className={cx('category-menu-icon')} />
-                                Thuốc Dành Cho Thủy Sinh
-                            </a>
+                                Thuốc Thủy Sinh
+                            </NavLink>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <a href={'/loai-san-pham/cay-thuy-sinh'}>
+                            <NavLink to={'/loai-san-pham/cay-thuy-sinh'}>
                                 <AquaPlant className={cx('category-menu-icon')} />
                                 Cây Thủy Sinh
-                            </a>
+                            </NavLink>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <a href={'/loai-san-pham/ca-canh'}>
+                            <NavLink to={'/loai-san-pham/ca-canh'}>
                                 <FishIcon className={cx('category-menu-icon')} /> Cá Cảnh
-                            </a>
+                            </NavLink>
                         </li>
                         <li className={cx('category-menu-item')}>
-                            <a href={'/loai-san-pham/tep-canh'}>
+                            <NavLink to={'/loai-san-pham/tep-canh'}>
                                 <ShrimpIcon className={cx('category-menu-icon')} />
                                 Tép Cảnh
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </div>

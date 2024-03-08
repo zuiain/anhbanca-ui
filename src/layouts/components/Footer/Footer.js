@@ -3,7 +3,7 @@ import styles from './Footer.module.scss';
 import { Link } from 'react-router-dom';
 import Image from '~/components/Image';
 import { LocationIcon, PhoneIcon, EmailIcon } from '~/components/Icons';
-import ListImages from '~/assets/images';
+import ListImages from '~/assets/img';
 
 const cx = classNames.bind(styles);
 

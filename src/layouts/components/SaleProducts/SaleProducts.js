@@ -60,7 +60,6 @@ function SaleProducts({ imgSrc, Icon, title, percents = 20, delay, isNew = false
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [index]);
-    console.log(productsResult);
 
     return (
         <div className={cx('sale')}>

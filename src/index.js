@@ -15,22 +15,22 @@ import ScrollToTop from './components/ScrollToTop';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-    // <React.StrictMode>
-    <BrowserRouter>
-        <QueryParamProvider
-            adapter={ReactRouter6Adapter}
-            options={{
-                searchStringToObject: queryString.parse,
-                objectToSearchString: queryString.stringify,
-            }}
-        >
-            <GlobalStyles>
-                <ScrollToTop />
-                <App />
-            </GlobalStyles>{' '}
-        </QueryParamProvider>
-    </BrowserRouter>,
-    // </React.StrictMode>,
+    <React.StrictMode>
+        <BrowserRouter>
+            <QueryParamProvider
+                adapter={ReactRouter6Adapter}
+                options={{
+                    searchStringToObject: queryString.parse,
+                    objectToSearchString: queryString.stringify,
+                }}
+            >
+                <GlobalStyles>
+                    <ScrollToTop />
+                    <App />
+                </GlobalStyles>{' '}
+            </QueryParamProvider>
+        </BrowserRouter>
+    </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

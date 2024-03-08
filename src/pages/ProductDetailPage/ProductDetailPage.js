@@ -53,22 +53,6 @@ function ProductDetail() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [slug]);
 
-    // useEffect(() => {
-    //     if (detailProductResult) {
-    //         const fetchApi = async () => {
-    //             const detailCategory = await getService.getDetailCategory(detailProductResult.category);
-    //             if (detailCategory === undefined) {
-    //                 alert('Error: No detail product found!');
-    //             } else {
-    //                 setDetailCategoryResult(detailCategory);
-    //             }
-    //         };
-
-    //         fetchApi();
-    //     }
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, []);
-
     return (
         <React.Fragment>
             {detailProductResult && (

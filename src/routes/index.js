@@ -1,29 +1,21 @@
-import { DefaultLayout, HeaderOnlyLayout } from '~/layouts';
-import { HomePage, ProductPage } from '~/pages/';
 import config from '~/config';
-import ProductDetailPage from '~/pages/ProductDetailPage';
-import CartPage from '~/pages/CartPage';
-import LoginPage from '~/pages/LoginPage';
-import RegisterPage from '~/pages/RegisterPage';
+import { ProductLayout, MainLayout, AdminLayout } from '~/layouts';
+import { HomePage, ProductPage, ProductDetailPage, CartPage, LoginPage, RegisterPage, WishlistPage } from '~/pages/';
 
 export const publicRoutes = [
     {
-        element: <DefaultLayout />,
+        element: <ProductLayout />,
+        path: config.routes.category,
         children: [
             // route sản phẩm theo category
             {
-                path: config.routes.category,
-                children: [
-                    {
-                        path: config.routes.category + '/:category',
-                        element: <ProductPage />,
-                    },
-                ],
+                path: config.routes.category + '/:category',
+                element: <ProductPage />,
             },
         ],
     },
     {
-        element: <HeaderOnlyLayout />,
+        element: <MainLayout />,
         children: [
             {
                 path: '/',
@@ -34,20 +26,35 @@ export const publicRoutes = [
                 element: <HomePage />,
             },
             {
-                path: '/gio-hang',
+                path: config.routes.cart,
                 element: <CartPage />,
             },
             {
-                path: '/dang-nhap',
+                path: config.routes.login,
                 element: <LoginPage />,
             },
             {
-                path: '/dang-ky',
+                path: config.routes.register,
                 element: <RegisterPage />,
+            },
+            {
+                path: config.routes.wishlist,
+                element: <WishlistPage />,
             },
             {
                 path: '/:slug',
                 element: <ProductDetailPage />,
+            },
+        ],
+    },
+    {
+        element: <AdminLayout />,
+        path: config.routes.admin,
+        children: [
+            // route sản phẩm theo category
+            {
+                path: config.routes.admin + '/',
+                element: <ProductPage />,
             },
         ],
     },

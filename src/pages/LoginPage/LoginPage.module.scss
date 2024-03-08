@@ -1,0 +1,65 @@
+.wrapper {
+    margin: 50px 0px;
+}
+
+.inner {
+    padding: 30px 25px;
+}
+
+.title {
+    margin: 8px 0px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 90%;
+        height: 2px;
+        left: 0px;
+        top: 30px;
+        background-color: var(--gray-color);
+    }
+}
+
+.title-sub {
+    margin: 10px 0px 15px 0px;
+    font-size: 1.5rem;
+    color: #666666;
+    font-weight: 400;
+}
+
+.wrap-input {
+    display: block;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.wrap-remember-forget {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrap-remember {
+    display: flex;
+    align-items: center;
+}
+
+.wrap-remember-checkbox {
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+}
+
+.wrap-forget-link {
+    &:hover {
+        color: var(--red-color);
+        cursor: pointer;
+    }
+}
+
+.button {
+    padding: 9px 36px;
+}

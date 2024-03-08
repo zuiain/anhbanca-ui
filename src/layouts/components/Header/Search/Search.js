@@ -72,7 +72,7 @@ function Search() {
                 onClickOutside={handleHideResults}
                 render={(attrs) => (
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                        <PopperWrapper className={cx('search-popper')}>
+                        <PopperWrapper>
                             <h4 className={cx('search-title')}>Sản phẩm tìm được</h4>
                             <div className={cx('search-result-box')}>
                                 {searchResult.map((result) => (
