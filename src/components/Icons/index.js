@@ -8,6 +8,7 @@ import {
     faUserPlus,
     faCircleExclamation,
     faTrash,
+    faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 
 import ListImages from '~/assets/img';
@@ -349,4 +350,12 @@ export const TrashIcon = ({ className, width = '1.6rem', height = '1.6rem' }) =>
 
 export const BasketIcon = ({ className, width = '16px', height = '16px' }) => {
     return <Image className={className} width={width} height={height} src={ListImages.basket} alt="category-icons" />;
+};
+
+export const FixIcon = ({ className, width = '1.6rem', height = '1.6rem' }) => {
+    return (
+        <>
+            <FontAwesomeIcon icon={faWrench} className={className} width={width} height={height} />
+        </>
+    );
 };

@@ -17,6 +17,18 @@ const post = async (path, options = {}) => {
     return res;
 };
 
-const httpRequest = { request, get, post };
+// customize delete
+const del = async (path, options = {}) => {
+    const res = await request.delete(path, options);
+    return res;
+};
+
+// customize put
+const put = async (path, options = {}) => {
+    const res = await request.put(path, options);
+    return res;
+};
+
+const httpRequest = { request, get, post, del, put };
 
 export default httpRequest;

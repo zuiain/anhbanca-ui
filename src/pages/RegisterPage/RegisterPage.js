@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import classNames from 'classnames/bind';
 import styles from './RegisterPage.module.scss';
 import Popper from '~/components/Popper';
@@ -11,12 +11,18 @@ import config from '~/config';
 const cx = classNames.bind(styles);
 
 function RegisterPage() {
-    const methods = useForm();
-    const { userName, email, address, phoneNumbers, password, confirmPassword } = config.validation;
+    const {
+        handleSubmit,
+        watch,
+        register,
+        formState: { errors },
+    } = useForm();
+    const { userName, email, address, phoneNumbers, password, confirmPassword } = config.validation.accountValidation;
     //const _password = useRef();
-    const passwordValue = methods.watch(password.name, '');
 
-    const handleSubmit = methods.handleSubmit((data) => {
+    const passwordValue = watch(password.name, '');
+
+    const handleOnSubmit = handleSubmit((data) => {
         console.log(data);
     });
 
@@ -31,50 +37,51 @@ function RegisterPage() {
                                 <div className={cx('inner')}>
                                     <h3 className={'title-line-run '}>Tạo tài khoản</h3>
                                     <h4 className={cx('title-sub')}>Thông tin cá nhân</h4>
-                                    <FormProvider {...methods}>
-                                        <form onSubmit={(e) => e.preventDefault()} noValidate autoComplete="off">
-                                            <div className={cx('wrap-input')}>
-                                                <div className={cx('wrap-input-right')}>
-                                                    <Input {...userName} />
-                                                </div>
-                                                <div className={cx('wrap-input-left')}>
-                                                    <Input {...email} />
-                                                </div>
-                                            </div>
 
-                                            <div className={cx('wrap-input')}>
-                                                <div className={cx('wrap-input-right')}>
-                                                    <Input {...address} />
-                                                </div>
-                                                <div className={cx('wrap-input-left')}>
-                                                    <Input {...phoneNumbers} />
-                                                </div>
+                                    <form onSubmit={(e) => e.preventDefault()} noValidate autoComplete="off">
+                                        <div className={cx('wrap-input')}>
+                                            <div className={cx('wrap-input-right')}>
+                                                <Input {...userName} register={register} errors={errors} />
                                             </div>
+                                            <div className={cx('wrap-input-left')}>
+                                                <Input {...email} register={register} errors={errors} />
+                                            </div>
+                                        </div>
 
-                                            <div className={cx('wrap-input')}>
-                                                <div className={cx('wrap-input-right')}>
-                                                    <Input {...password} />
-                                                </div>
-                                                <div className={cx('wrap-input-left')}>
-                                                    <Input
-                                                        {...confirmPassword}
-                                                        validation={{
-                                                            required: {
-                                                                value: true,
-                                                                message: 'Đây là trường bắt buộc phải nhập ',
-                                                            },
-                                                            validate: (value) =>
-                                                                value === passwordValue ||
-                                                                'Mật khẩu xác nhận không trùng với mật khẩu',
-                                                        }}
-                                                    />
-                                                </div>
+                                        <div className={cx('wrap-input')}>
+                                            <div className={cx('wrap-input-right')}>
+                                                <Input {...address} register={register} errors={errors} />
                                             </div>
-                                            <Button className={cx('button')} primary onClick={handleSubmit}>
-                                                Đăng ký
-                                            </Button>
-                                        </form>
-                                    </FormProvider>
+                                            <div className={cx('wrap-input-left')}>
+                                                <Input {...phoneNumbers} register={register} errors={errors} />
+                                            </div>
+                                        </div>
+
+                                        <div className={cx('wrap-input')}>
+                                            <div className={cx('wrap-input-right')}>
+                                                <Input {...password} register={register} errors={errors} />
+                                            </div>
+                                            <div className={cx('wrap-input-left')}>
+                                                <Input
+                                                    {...confirmPassword}
+                                                    register={register}
+                                                    errors={errors}
+                                                    validation={{
+                                                        required: {
+                                                            value: true,
+                                                            message: 'Đây là trường bắt buộc phải nhập ',
+                                                        },
+                                                        validate: (value) =>
+                                                            value === passwordValue ||
+                                                            'Mật khẩu xác nhận không trùng với mật khẩu',
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+                                        <Button className={cx('button')} primary onClick={handleOnSubmit}>
+                                            Đăng ký
+                                        </Button>
+                                    </form>
                                 </div>
                             </Popper>
                         </div>

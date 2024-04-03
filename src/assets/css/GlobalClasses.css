@@ -53,6 +53,10 @@
     align-items: center;
 }
 
+.fixed-width-30-percent {
+    width: 30%;
+}
+
 @keyframes run {
     0% {
         width: 5px;

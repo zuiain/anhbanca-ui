@@ -41,7 +41,7 @@ function CartProduct({ data }) {
             </div>
             <div className={cx('cart-product-info')}>
                 {data.map((product) => (
-                    <div className={cx('product-info')}>
+                    <div className={cx('product-info')} key={product.id}>
                         <div className="row">
                             <div className="col l-2">
                                 <Link to={`/${product.slug}`} className={cx('product-img-link')}>

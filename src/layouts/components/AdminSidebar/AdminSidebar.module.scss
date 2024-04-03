@@ -1,0 +1,125 @@
+.container {
+    width: 260px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    bottom: 0;
+    border-right: 1px solid #ddd;
+}
+
+.account-container {
+    height: var(--navbar-admin-height);
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 7px 11px;
+    z-index: 4;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+        height: 1px;
+        width: calc(100% - 30px);
+        background-color: #66615b;
+        opacity: 0.4;
+    }
+
+    .img-wrapper {
+        display: block;
+        opacity: 1;
+        width: 37px;
+        margin-left: 10px;
+        margin-right: 12px;
+        overflow: hidden;
+        border-radius: 999px;
+    }
+
+    .img {
+        padding-top: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        // border-radius: 3px;
+        // transform: scale3d(0.95, 0.95, 0.95);
+    }
+
+    .account-name {
+        flex: 1;
+        font-size: 1.8rem;
+        opacity: 1;
+        padding: 11px 0 8px;
+        transform: translate3d(0px, 0, 0);
+    }
+}
+
+.sidebar-wrapper {
+    position: relative;
+    //height: calc(100vh - 75px);
+    // overflow: auto;
+    width: var(--sidebar-admin-width);
+    z-index: 4;
+    padding-bottom: 100px;
+
+    .nav {
+        margin-top: 20px;
+        display: block;
+
+        .nav-item {
+            height: 50px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 1.6rem;
+            padding: 10px 8px;
+            line-height: 30px;
+            margin: 10px 15px 0;
+            opacity: 0.6;
+
+            &:hover {
+                opacity: 0.9;
+            }
+
+            .icon {
+                margin-right: 10px;
+            }
+
+            .nav-item p {
+                height: 30px;
+                flex: 1;
+            }
+        }
+
+        .active > .nav-item::before {
+            border-right: 17px solid #f4f3ef;
+            border-top: 17px solid transparent;
+            border-bottom: 17px solid transparent;
+            content: '';
+            display: inline-block;
+            position: absolute;
+            right: -17px;
+            opacity: 1;
+            top: 7px;
+            transition: opacity 150ms ease-in;
+        }
+
+        .active > .nav-item::after {
+            border-right: 17px solid #dddddd;
+            border-top: 17px solid transparent;
+            border-bottom: 17px solid transparent;
+            content: '';
+            display: inline-block;
+            position: absolute;
+            right: -16px;
+            opacity: 1;
+            top: 7px;
+            transition: opacity 150ms ease-in;
+        }
+    }
+}

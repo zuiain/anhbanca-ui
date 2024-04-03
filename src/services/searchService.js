@@ -1,6 +1,6 @@
 import { httpRequest } from '~/utils/';
 
-const searchProducts = async (q, type = 'less') => {
+const searchProduct = async (q, type = 'less') => {
     try {
         const res = await httpRequest.get('product/search', {
             params: {
@@ -17,5 +17,5 @@ const searchProducts = async (q, type = 'less') => {
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export const searchService = {
-    searchProducts,
+    searchProduct,
 };

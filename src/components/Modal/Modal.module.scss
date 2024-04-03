@@ -1,0 +1,70 @@
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Delete modal
+.container {
+    width: 500px;
+    min-height: 200px;
+    max-height: 500px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0px;
+
+    .title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 25px;
+    }
+
+    .dismiss-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: rgb(220, 220, 220);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+    }
+
+    .title {
+        display: inline-block;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .content {
+        padding: 20px 25px;
+        border-top: 1px solid rgb(220, 220, 220);
+        border-bottom: 1px solid rgb(220, 220, 220);
+
+        & span {
+            color: var(--red-color);
+            font-weight: 400;
+            font-size: 1.7rem;
+        }
+    }
+
+    .btn-wrapper {
+        display: flex;
+        padding: 10px 25px;
+        align-items: center;
+        justify-content: flex-end;
+
+        .btn-del {
+            background-color: #51cbce !important;
+        }
+    }
+}

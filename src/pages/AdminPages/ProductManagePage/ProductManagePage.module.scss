@@ -1,0 +1,159 @@
+.card {
+    border-radius: 12px;
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    margin-bottom: 12px;
+    position: relative;
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 15px 15px 0;
+
+    .card-title {
+        padding: 10px 0px 12px;
+        font-size: 2.4rem;
+        font-weight: 400;
+    }
+}
+
+.btn {
+    margin-left: 10px;
+    background-color: #51cbce !important;
+    height: 40px;
+}
+
+.card-content {
+    transition: all 1s ease-in-out;
+}
+
+.card-search {
+    padding: 10px 15px 0px;
+    position: relative;
+
+    .search-input {
+        width: 460px;
+        height: 40px;
+        padding: 8px 5px;
+        border-radius: 5px;
+        border: 1px solid #51cbce;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .search-btn {
+        margin-left: 10px;
+        background-color: #51cbce !important;
+    }
+
+    .loading {
+        position: absolute;
+        top: 60%;
+        left: 450px;
+        transform: translateY(-50%);
+        color: rgba(var(--gray-color-rgb), 0.34);
+        animation: spinner 1s linear infinite;
+    }
+}
+
+.card-body {
+    padding: 15px 15px 10px;
+
+    .table {
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #212529;
+        border-collapse: collapse;
+
+        .thead {
+            color: #51cbce !important;
+            th {
+                padding: 12px 7px;
+                text-align: start;
+            }
+        }
+
+        tr > td {
+            padding: 12px 7px;
+            vertical-align: middle;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .icon {
+            margin-right: 10px;
+            cursor: pointer;
+
+            &:hover {
+                color: #51cbce !important;
+            }
+        }
+    }
+}
+
+.pagination {
+    width: 100%;
+    display: flex;
+    padding-bottom: 15px;
+    justify-content: center;
+}
+
+// edit form
+.form-container {
+    border-radius: 12px;
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    margin-bottom: 12px;
+    position: relative;
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 15px 15px 0;
+
+    .form-title {
+        padding: 10px 0px 12px;
+        font-size: 2.4rem;
+        font-weight: 400;
+    }
+
+    .add-btn {
+        background-color: #51cbce !important;
+        height: 40px;
+    }
+}
+
+.form-wrapper {
+    padding: 15px 15px 10px;
+    color: #51cbce !important;
+}
+
+.row-wrapper {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-add {
+    background-color: #51cbce !important;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}

@@ -7,11 +7,11 @@ const routes = {
 
     wishlist: '/yeu-thich',
 
-    login: 'dang-nhap',
+    login: '/dang-nhap',
 
-    register: 'dang-ky',
+    register: '/dang-ky',
 
-    admin: 'admin',
+    admin: '/admin',
 };
 
 export default routes;

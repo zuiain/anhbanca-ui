@@ -1,0 +1,32 @@
+.navbar {
+    width: 100%;
+    min-height: 53px;
+    height: 60px;
+    padding: 10px 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1029;
+    background-color: transparent !important;
+    box-shadow: none;
+    border-bottom: 1px solid #ddd;
+    transition: all 300ms ease 0s;
+
+    .navbar-wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0px 14px;
+    }
+
+    .nav-brand {
+        color: #66615b;
+        text-transform: capitalize;
+        font-size: 2rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        line-height: 1.625rem;
+        font-weight: 600;
+    }
+}

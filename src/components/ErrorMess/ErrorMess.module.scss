@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 5px;
+    margin-bottom: -10px;
+    font-weight: 600;
+    color: var(--red-color);
+}
+
+.error-mess {
+    margin-left: 5px;
+}

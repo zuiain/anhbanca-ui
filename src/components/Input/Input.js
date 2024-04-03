@@ -1,19 +1,26 @@
 import classNames from 'classnames/bind';
 import styles from './Input.module.scss';
-import { useFormContext } from 'react-hook-form';
-//import { findInputError, isFormInvalid } from '~/utils';
-import InputError from './InputError';
 import { AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
+import ErrorMess from '../ErrorMess/ErrorMess';
 
 const cx = classNames.bind(styles);
 
-function Input({ label, type, id, className, placeholder, name, validation, multiline = false }) {
-    const {
-        register,
-        formState: { errors },
-    } = useFormContext();
-
+function Input({
+    label,
+    labelRequire = false,
+    type,
+    id,
+    name,
+    className,
+    placeholder,
+    value,
+    multiline = false,
+    register,
+    errors,
+    valueAsNumber,
+    ...props
+}) {
     const checkError = errors[name] ? true : false;
 
     const classes = cx('container', { error: checkError, [className]: className });
@@ -23,27 +30,33 @@ function Input({ label, type, id, className, placeholder, name, validation, mult
             {label && (
                 <div className={cx('label')}>
                     <label htmlFor={id}>{label}</label>
+                    {labelRequire && <span className={cx('label-re')}>(*)</span>}
                 </div>
             )}
             {multiline ? (
                 <textarea
                     id={id}
+                    name={name}
                     type={type}
                     className={cx(classes, 'text-area')}
                     placeholder={placeholder}
-                    {...register(name, validation)}
+                    {...register(name)}
+                    {...props}
                 ></textarea>
             ) : (
                 <input
                     id={id}
+                    name={name}
                     type={type}
                     className={classes}
                     placeholder={placeholder}
-                    {...register(name, validation)}
+                    value={value}
+                    {...register(name, { valueAsNumber })}
+                    {...props}
                 />
             )}
             <AnimatePresence mode="wait" initial={false}>
-                {checkError && <InputError message={errors[name].message} key={errors[name].message} />}
+                {checkError && <ErrorMess message={errors[name].message} key={errors[name].message} />}
             </AnimatePresence>
         </div>
     );

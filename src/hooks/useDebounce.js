@@ -4,13 +4,16 @@ import { useState, useEffect } from 'react';
 // sau thời gian độ trễ -> giá trị sẽ được tạo
 function useDebounce(value, delay) {
     const [debounceValue, setDebounceValue] = useState(value);
+
     useEffect(() => {
         const timerID = setTimeout(() => setDebounceValue(value), delay);
+
         return () => {
             clearTimeout(timerID);
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [value]);
+
     return debounceValue;
 }
 

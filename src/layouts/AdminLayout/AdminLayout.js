@@ -1,18 +1,24 @@
 import { Outlet } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './AdminLayout.module.scss';
+import AdminSidebar from '~/layouts/components/AdminSidebar';
+import React from 'react';
+import AdminNavbar from '../components/AdminNavbar';
 
 const cx = classNames.bind(styles);
 
-function HeaderOnlyLayout() {
+function AdminLayout() {
     return (
-        <div className={cx('wrapper')}>
-            <h1>Admin PAGE</h1>
+        <React.Fragment>
+            <AdminSidebar />
             <div className={cx('container')}>
-                <Outlet />
+                <AdminNavbar />
+                <div className={cx('content')}>
+                    <Outlet />
+                </div>
             </div>
-        </div>
+        </React.Fragment>
     );
 }
 
-export default HeaderOnlyLayout;
+export default AdminLayout;

@@ -5,6 +5,7 @@ const ListImages = {
     mid_banner_1: require('~/assets/img/mid_banner_image_1.jpg'),
     mid_banner_2: require('~/assets/img/mid_banner_image_2.webp'),
     basket: require('~/assets/img/basket.png'),
+    logo_small: require('~/assets/img/logo-small.png'),
 };
 
 export default ListImages;

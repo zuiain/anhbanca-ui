@@ -12,7 +12,7 @@ import config from '~/config';
 const cx = classNames.bind(styles);
 
 function LoginPage() {
-    const { userName, password } = config.validation;
+    const { userName, password } = config.validation.accountValidation;
     const checkboxId = useId();
     const methods = useForm();
 

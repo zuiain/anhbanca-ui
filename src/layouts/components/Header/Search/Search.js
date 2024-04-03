@@ -10,7 +10,7 @@ import { useDebounce } from '~/hooks';
 import { searchService } from '~/services';
 
 const cx = classNames.bind(styles);
-const { searchProducts } = searchService;
+const { searchProduct } = searchService;
 
 function Search() {
     const [searchResult, setSearchResult] = useState([]);
@@ -29,7 +29,7 @@ function Search() {
 
         const fetchApi = async () => {
             setLoading(true);
-            const _searchResult = await searchProducts(debounceValue);
+            const _searchResult = await searchProduct(debounceValue);
             if (_searchResult.length > 0) {
                 setSearchResult(_searchResult);
                 setLoading(false);

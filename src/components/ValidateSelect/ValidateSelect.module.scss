@@ -1,0 +1,30 @@
+.label {
+    display: flex;
+    justify-content: flex-start;
+    text-transform: capitalize;
+    font-weight: 550;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    user-select: none;
+}
+
+.label-re {
+    font-size: 1rem;
+    margin-left: 5px;
+    color: var(--red-color);
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    z-index: 999;
+}
+
+.error {
+    border: 1px solid var(--red-color);
+    border-radius: 5px;
+}
